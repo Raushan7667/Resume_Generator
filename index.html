@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="container"id="cv-form">
+        <h1 class="text-center my-2">Resume Generator</h1>
+        <p class="text-center">By Code with self</p>
+        <div class="row">
+            <div class="col-md-6">
+                <!-- first column -->
+                <h3>Personal information</h3>
+                <div class="form-group">
+
+                    <label for="nameField">Your Name</label>
+                    <input type="text" 
+                    id="nameField" 
+                    placeholder="enter here" 
+                    class="form-control" />
+
+                </div>
+
+
+                <div class="form-group mt-2">
+
+                    <label for="contactField">Your Phone number</label>
+                    <input 
+                    type="text" 
+                    id="contactField" 
+                    placeholder="enter here" 
+                    class="form-control" />
+
+                </div>
+ 
+
+                <div class="form-group mt-2">
+
+                    <label for="addressField">Your Address</label>
+                    <textarea
+                    rows="3" 
+                    type="text"
+                    id="addressField"
+                    placeholder="enter here"
+                    class="form-control">
+                    </textarea>
+                </div>
+
+
+                <p class="text-secondry my-3">Important link</p>
+
+
+                <div class="form-group mt-2">
+
+                    <label for="LinkedinField">Linkedin Profile</label>
+                    <input 
+                    type="text" 
+                    id="LinkedinField"
+                    placeholder="enter here" 
+                    class="form-control" />
+
+                </div>
+
+
+                <div class="form-group mt-2">
+
+                    <label for="githubField">GitHub Profile</label>
+                    <input type="text"
+                     id="githubField" 
+                     placeholder="enter here" 
+                     class="form-control" />
+
+                </div>
+
+
+                <div class="form-group mt-2">
+
+                    <label for="websiteField">Your website</label>
+                    <input 
+                    type="text" 
+                    id="websiteField" 
+                    placeholder="enter here" 
+                    class="form-control" />
+
+                </div>
+
+
+                <div class="form-group mt-2"id="pr">
+                    <label for="">Positions of Responsibility</label>
+                    <textarea rows="3"placeholder="enter here" class="form-control poFild ">
+                    </textarea>
+                    <div class="container text-center mt-2 AddButton" id="poAddButton">
+                        <button onclick="pers_Res()"class="btn btn-primary btn-sm">Add More</button>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-md-6">
+                <!-- 2nd column -->
+                <h3>Professional information</h3>
+               
+                <div class="form-group mt-2" id="we">
+                    <label for="">Work Experience/Internship Detail</label>
+                    <textarea placeholder="enter here" class="form-control weFild">
+                    </textarea>
+
+                    <!-- new textArea -->
+                    <div class="container text-center mt-2" id="weAddButton">
+                        <button onclick="addnewWoField()" class="btn btn-primary btn-sm">Add More</button>
+                    </div>
+                </div>
+
+                <div class="form-group mt-2" id="pe">
+                    <label for="">Personal Project</label>
+                    <textarea 
+                    placeholder="enter here" class="form-control peFild ">
+                    </textarea>
+                    <div class="container text-center mt-2 AddButton" id="peAddButton">
+                        <button onclick="peProject()" class="btn btn-primary btn-sm">Add More</button>
+                    </div>
+                </div>
+
+                <div class="form-group mt-2" id="aca">
+                    <label for="">Acadimic Qualification</label>
+                    <textarea 
+                    placeholder="enter here" class="form-control aqFild">
+                    </textarea>
+
+                    <div 
+                    class="container text-center mt-2 AddButton" id="aqAddButton"> 
+                    <button onclick="Acqulification()"
+                    class="btn btn-primary btn-sm">Add More
+                    </button>
+                    </div>
+
+                </div>
+
+
+                <div class="form-group mt-2"id="tec">
+
+                    <label for="">Technical Skill</label>
+                    <textarea 
+                    placeholder="enter here" class="form-control teFild">
+                    </textarea>
+
+                    <div
+                     class="container text-center mt-2 AddButton" id="teAddButton"> 
+                     <button onclick="techniaclaskil()"
+                     class="btn btn-primary btn-sm">Add More
+                    </button>
+                    </div>
+                </div>
+
+
+                <div class="form-group mt-2"id="ach">
+                    <label for="">Achivement</label>
+                    <textarea
+                     placeholder="enter here" class="form-control acFild">
+                    </textarea>
+
+                    <!-- new textArea -->
+                    <div 
+                    class="container text-center mt-2" id="acAddButton">
+                    <button onclick="achivement()" 
+                    class="btn btn-primary btn-sm">Add More
+                    </button>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="container text-center mt-3">
+            <button onclick="generateCV()" class="btn btn-primary btn-lg">
+                Generate Cv
+            </button>
+        </div>
+    </div>
+
+    <!-- cv-templet -->
+
+
+    <div class="container" id="cv-templet">
+  <div class="row">
+        <div class="col-md-4 text-center py-5 background">
+             <!-- this is first col -->
+             <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" class="img-fluid myimage" alt="">
+
+             <div class="container">
+                <p id="nameT1">Raushan</p>
+                <p id="contactT">456789</p>
+                <p id="addressT">56 ujsijiss</p>
+            </div>
+            <hr/>
+            <p><a id="liT" href="#1">https://www.linkedin.com</a></p>
+            <p><a id="giT" href="#2">https://www.github.com</a></p>
+            <p><a id="poT"href="#3">https://www.portfolio.com</a></p>
+        </div>
+       
+        <div class="col-md-8 py-5">
+
+            <!-- this is second col -->
+            <h1 id="nameT2" class="text-center"style="font: weight 980px;">Raushan kumar</h1>
+
+            <!-- objictive card -->
+
+            <!-- Acadmic Qualification -->
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h3>Acadmic Qualification</h3>
+                </div>
+                <div class="card-body">
+                    <ul id="aqT">
+                        <li>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente porro 
+                        </li>
+                        <li>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente porro 
+                        </li>
+                        <li>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente porro 
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- internship -->
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h3>Internship/work Experience</h3>
+                </div>
+                <div class="card-body">
+                    <ul id="inT">
+                        <li>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente porro 
+                        </li>
+                        <li>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente porro 
+                        </li>
+                        <li>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente porro 
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Project -->
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h3>Project</h3>
+                </div>
+                <div class="card-body">
+                    <ul id="prT">
+                        <li>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente porro 
+                        </li>
+                        <li>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente porro 
+                        </li>
+                        <li>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente porro 
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- techiniaca skill -->
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h3>techiniaca skill</h3>
+                </div>
+                <div class="card-body">
+                    <ul id="teT">
+                        <li>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente porro 
+                        </li>
+                        <li>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente porro 
+                        </li>
+                        <li>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente porro 
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- position ans resposnibility -->
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h3>position ans resposnibility</h3>
+                </div>
+                <div class="card-body">
+                    <ul id="porT">
+                        <li>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente porro 
+                        </li>
+                        <li>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente porro 
+                        </li>
+                        <li>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente porro 
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- achivement -->
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h3>achivement</h3>
+                </div>
+                <div class="card-body">
+                    <ul id="acT">
+                        <li>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente porro 
+                        </li>
+                        <li>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente porro 
+                        </li>
+                        <li>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente porro 
+                        </li>
+                    </ul>
+                </div>
+            </div>
+          
+           
+            </div>
+            <div class="container text-center mt-3">
+                <button onclick="printcv()" class="btn btn-primary btn-lg">
+                    print Cv
+                </button>
+            </div>
+           
+        </div>
+        
+        
+      
+  </div>
+  
+    <!-- here java script code will be written -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
